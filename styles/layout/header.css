@@ -1,6 +1,4 @@
-/* ================================================
-   HEADER Y NAVEGACIÓN
-   ================================================ */
+
 
 .header {
     position: sticky;
@@ -23,6 +21,7 @@
     display: flex;
     align-items: center;
     gap: var(--spacing-xs);
+    z-index: 52;
 }
 
 .header--logo::before {
@@ -32,33 +31,158 @@
     justify-content: center;
     width: 28px;
     height: 28px;
-    background-color: rgba(48, 125, 232, 0.1);
+    background-color: var(--bckground-logo);
     color: var(--btnPrimary-backgr);
     border-radius: 6px;
     font-size: 1rem;
 }
 
+/* ============== MENÚ MÓVIL ============== */
+
+/* Navegación móvil - oculta por defecto */
 .header--navbar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: rgba(250, 249, 246, 0.98);
+    backdrop-filter: blur(12px);
     display: flex;
-    gap: var(--spacing-md);
+    flex-direction: column;
+    gap: 0;
+    padding: 20px;
+    border-bottom: 1px solid #e7e5e4;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 51;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Menú abierto */
+.header--navbar.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
 }
 
 .header--navbar a {
-    font-weight: 500;
-    font-size: 0.75rem;
-    color: var(--text-secondary);
-    transition: color var(--transition-base);
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-primary);
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-base);
 }
 
 .header--navbar a:hover {
+    background-color: rgba(48, 125, 232, 0.08);
     color: var(--btnPrimary-backgr);
 }
 
+/* Botón de contacto solo en móvil */
+.mobile-only {
+    margin-top: 8px;
+}
+
+/* Botón de contacto desktop - oculto en móvil */
 .header--btnContact {
     display: none;
 }
 
-/* Responsive */
+/* ============== BOTÓN HAMBURGUESA ============== */
+
+.mobile-menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 52;
+    transition: transform var(--transition-base);
+}
+
+.mobile-menu-toggle:active {
+    transform: scale(0.95);
+}
+
+/* Icono hamburguesa */
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    width: 24px;
+    height: 2px;
+    background-color: var(--btnPrimary-backgr);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger {
+    position: relative;
+    display: block;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    top: 8px;
+}
+
+/* Animación del hamburguesa a X */
+.mobile-menu-toggle.active .hamburger {
+    background-color: transparent;
+}
+
+.mobile-menu-toggle.active .hamburger::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.mobile-menu-toggle.active .hamburger::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+#contact-desktop{
+    display:none;
+}
+    #contact_mobile {
+        display: visible;
+    }
+
+/* ============== OVERLAY ============== */
+
+.menu-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 49;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ============== RESPONSIVE ============== */
+
 @media (min-width: 768px) {
     .header {
         padding: 0 32px;
@@ -75,16 +199,51 @@
         font-size: 1.25rem;
     }
 
+    /* En tablet/desktop: menú normal */
     .header--navbar {
+        position: static;
+        flex-direction: row;
+        background: transparent;
+        backdrop-filter: none;
+        padding: 0;
         gap: var(--spacing-lg);
+        border: none;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        box-shadow: none;
     }
 
     .header--navbar a {
+        padding: 0;
         font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--text-secondary);
     }
 
-    .header--btnContact {
+    .header--navbar a:hover {
+        background-color: transparent;
+        color: var(--btnPrimary-backgr);
+    }
+
+    /* Ocultar botón contacto móvil */
+    #contact_mobile {
+        display: none;
+    }
+
+    /* Mostrar botón contacto desktop */
+    #contact-desktop {
         display: flex;
+    }
+
+    /* Ocultar hamburguesa */
+    .mobile-menu-toggle {
+        display: none;
+    }
+
+    /* Ocultar overlay */
+    .menu-overlay {
+        display: none;
     }
 }
 
