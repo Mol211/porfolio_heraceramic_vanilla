@@ -1,0 +1,200 @@
+/* ================================================
+   PÁGINA SOBRE MÍ
+   ================================================ */
+
+/* Bio Section */
+.bio {
+    display: flex;
+    flex-direction: column;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: var(--spacing-2xl) 20px;
+    gap: var(--spacing-xl);
+    background-color: #ffffff;
+}
+
+.bio-image {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    background-color: #f1f5f9;
+}
+
+.bio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s ease;
+}
+
+.bio-image:hover img {
+    transform: scale(1.05);
+}
+
+.bio-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.bio-text h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 900;
+    line-height: 1.2;
+    color: var(--earth-900);
+    letter-spacing: -0.025em;
+}
+
+.bio-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.bio-materials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-xs);
+}
+
+/* Philosophy Section */
+.philosophy {
+    display: flex;
+    flex-direction: column;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: var(--spacing-3xl) 20px;
+    background-color: var(--background);
+}
+
+.philosophy-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto var(--spacing-2xl);
+}
+
+.philosophy-header h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--earth-900);
+    margin-bottom: var(--spacing-md);
+    letter-spacing: -0.025em;
+}
+
+.philosophy-header p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.philosophy-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+}
+
+/* CTA Section */
+.cta-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: var(--spacing-3xl) 20px;
+    gap: 20px;
+}
+
+.cta-section h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--earth-900);
+    letter-spacing: -0.025em;
+}
+
+.cta-section p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .bio {
+        flex-direction: row;
+        padding: 80px var(--spacing-2xl);
+        gap: var(--spacing-2xl);
+        align-items: center;
+    }
+
+    .bio-image {
+        flex: 1;
+        height: 500px;
+    }
+
+    .bio-text {
+        flex: 1;
+        gap: var(--spacing-lg);
+    }
+
+    .badge {
+        font-size: 0.8125rem;
+        padding: var(--spacing-xs) var(--spacing-md);
+    }
+
+    .bio-text p {
+        font-size: 1.125rem;
+    }
+
+    .philosophy {
+        padding: var(--spacing-4xl) var(--spacing-2xl);
+    }
+
+    .philosophy-header {
+        margin-bottom: 56px;
+    }
+
+    .philosophy-cards {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+    }
+
+    .card {
+        padding: 36px 28px;
+    }
+
+    .cta-section {
+        padding: var(--spacing-4xl) var(--spacing-2xl);
+    }
+}
+
+@media (min-width: 1024px) {
+    .bio {
+        padding: var(--spacing-4xl) var(--spacing-3xl);
+        gap: 80px;
+    }
+
+    .bio-image {
+        height: 600px;
+    }
+
+    .philosophy {
+        padding: 120px var(--spacing-3xl);
+    }
+
+    .philosophy-cards {
+        gap: var(--spacing-xl);
+    }
+
+    .card {
+        padding: 40px var(--spacing-xl);
+    }
+
+    .cta-section {
+        padding: 120px var(--spacing-3xl);
+    }
+}

@@ -1,0 +1,99 @@
+/* ================================================
+   HEADER Y NAVEGACIÓN
+   ================================================ */
+
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    background-color: rgba(250, 249, 246, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #e7e5e4;
+}
+
+.header--logo {
+    color: var(--earth-900);
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: -0.025em;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.header--logo::before {
+    content: '⚒';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background-color: rgba(48, 125, 232, 0.1);
+    color: var(--btnPrimary-backgr);
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.header--navbar {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.header--navbar a {
+    font-weight: 500;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    transition: color var(--transition-base);
+}
+
+.header--navbar a:hover {
+    color: var(--btnPrimary-backgr);
+}
+
+.header--btnContact {
+    display: none;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .header {
+        padding: 0 32px;
+        height: 64px;
+    }
+
+    .header--logo {
+        font-size: 1.125rem;
+    }
+
+    .header--logo::before {
+        width: 32px;
+        height: 32px;
+        font-size: 1.25rem;
+    }
+
+    .header--navbar {
+        gap: var(--spacing-lg);
+    }
+
+    .header--navbar a {
+        font-size: 0.875rem;
+    }
+
+    .header--btnContact {
+        display: flex;
+    }
+}
+
+@media (min-width: 1024px) {
+    .header {
+        padding: 0 48px;
+    }
+
+    .header--navbar {
+        gap: var(--spacing-xl);
+    }
+}

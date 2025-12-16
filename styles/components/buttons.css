@@ -1,0 +1,124 @@
+/* ================================================
+   BOTONES
+   ================================================ */
+
+/* Botón primario */
+.btnPrinc {
+    color: var(--btnPrimary-text);
+    background-color: var(--btnPrimary-backgr);
+    padding: 10px 20px;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    font-size: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+    white-space: nowrap;
+    border: none;
+    cursor: pointer;
+}
+
+.btnPrinc:hover {
+    background-color: #2563eb;
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+}
+
+.btnPrinc:active {
+    transform: translateY(0);
+}
+
+/* Botón secundario */
+.btnSec {
+    color: var(--text-primary);
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-radius: var(--radius-sm);
+    border: 1px solid #cbd5e1;
+    font-weight: 700;
+    font-size: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-base);
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.btnSec:hover {
+    background-color: #f8fafc;
+    color: var(--btnPrimary-backgr);
+    border-color: var(--btnPrimary-backgr);
+}
+
+/* Link sin estilo de botón */
+.noBtn {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--btnPrimary-backgr);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    transition: gap var(--transition-base);
+}
+
+.noBtn:hover {
+    gap: var(--spacing-sm);
+}
+
+.noBtn::after {
+    content: '→';
+    font-size: 1.2em;
+    transition: transform var(--transition-base);
+}
+
+/* Botón grande */
+.btn-large {
+    padding: 14px 32px;
+    font-size: 1rem;
+}
+
+/* Botón de envío de formulario */
+.btn-submit {
+    margin-top: var(--spacing-xs);
+    padding: 14px 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    font-size: 1rem;
+}
+
+.btn-submit .arrow {
+    transition: transform var(--transition-base);
+}
+
+.btn-submit:hover .arrow {
+    transform: translateX(4px);
+}
+
+/* Botón de filtro */
+.filter-btn {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.filter-btn:hover {
+    border-color: var(--btnPrimary-backgr);
+    color: var(--btnPrimary-backgr);
+}
+
+.filter-btn.active {
+    background-color: var(--btnPrimary-backgr);
+    border-color: var(--btnPrimary-backgr);
+    color: white;
+}

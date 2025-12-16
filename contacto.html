@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Heraceramic</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cambo&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+</head>
+<body>
+    <header class="header container">
+        <div class="header--logo">
+            <span>heraceramic</span>
+        </div>
+        <nav class="header--navbar">
+            <a href="./index.html">Inicio</a>
+            <a href="./sobremi.html">Sobre Mí</a>
+            <a href="./creaciones.html">Creaciones</a>
+        </nav>
+        <nav class="header--btnContact">
+            <a class="btnPrinc" href="./contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <main class="contact-main">
+        <!-- Left Column: Form -->
+        <div class="contact-form-section">
+            <div class="contact-form-wrapper">
+                <div class="contact-intro">
+                    <h1>Hablemos</h1>
+                    <p>Si tienes alguna pregunta sobre mis piezas o quieres colaborar, escríbeme. Me encantaría
+                        escuchar tus ideas.</p>
+                </div>
+
+                <form class="contact-form">
+                    <div class="form-row">
+                        <label class="form-field">
+                            <span>Nombre</span>
+                            <input type="text" placeholder="Tu nombre" required>
+                        </label>
+                        <label class="form-field">
+                            <span>Correo electrónico</span>
+                            <input type="email" placeholder="tu@email.com" required>
+                        </label>
+                    </div>
+
+                    <label class="form-field">
+                        <span>Asunto</span>
+                        <select required>
+                            <option value="">Selecciona un asunto</option>
+                            <option value="general">Consulta general</option>
+                            <option value="comision">Comisión personalizada</option>
+                            <option value="colaboracion">Colaboración</option>
+                            <option value="visita">Visita al taller</option>
+                        </select>
+                    </label>
+
+                    <label class="form-field">
+                        <span>Mensaje</span>
+                        <textarea placeholder="Cuéntame más sobre lo que necesitas..." rows="6" required></textarea>
+                    </label>
+
+                    <button type="submit" class="btnPrinc btn-submit">
+                        Enviar mensaje
+                        <span class="arrow">→</span>
+                    </button>
+                </form>
+
+                <hr class="divider">
+
+                <div class="contact-info-grid">
+                    <div class="info-card">
+                        <div class="info-icon" style="background-color: rgba(251, 146, 60, 0.1);">
+                            <span style="color: #f97316;">📍</span>
+                        </div>
+                        <div class="info-content">
+                            <h4>Visita el Taller</h4>
+                            <p>Calle de la Cerámica, 12</p>
+                            <p>11404, Jerez de la Frontera</p>
+                            <a href="#" class="info-link">Ver en mapa</a>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon" style="background-color: rgba(48, 125, 232, 0.1);">
+                            <span style="color: #307de8;">✉</span>
+                        </div>
+                        <div class="info-content">
+                            <h4>Contacto Directo</h4>
+                            <p><a href="mailto:mariadelahp@gmail.com">mariadelahp@gmail.com</a></p>
+                            <p>+34 666 66 66 66</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Column: Image -->
+        <div class="contact-image-section">
+            <div class="contact-image-wrapper">
+                <img src="./res/tecnicapellizco.webp" alt="Proceso de creación cerámica">
+                <div class="image-overlay">
+                    <div class="overlay-text">
+                        <h3>Proceso artesanal</h3>
+                        <p>Cada pieza es única</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <div class="logo">heraceramic</div>
+            <nav class="nav-footer">
+                <a href="#">Instagram</a>
+                <a href="#">Pinterest</a>
+                <a href="#">Contacto</a>
+            </nav>
+            <small>&copy; 2025 Heraceramic. Todos los derechos reservados.</small>
+        </div>
+    </footer>
+    
+</body>
+
+</html>

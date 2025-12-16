@@ -1,0 +1,51 @@
+/* ================================================
+   VARIABLES CSS
+   ================================================ */
+
+:root {
+    /* Colores principales */
+    --background: #f6f7f8;
+    --background-dark: #ffffff;
+    --text-primary: #0f172a;
+    --text-secondary: #64748b;
+    
+    /* Colores de marca */
+    --btnPrimary-backgr: #307de8;
+    --btnPrimary-text: #fff;
+    --text-navbar-a: #64748b;
+    
+    /* Tonos tierra */
+    --earth-50: #faf9f6;
+    --earth-100: #f5f0e6;
+    --earth-800: #5c5446;
+    --earth-900: #2c261e;
+    
+    /* Utilidades */
+    --border-color: #e2e8f0;
+    
+    /* Espaciado */
+    --spacing-xs: 8px;
+    --spacing-sm: 12px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    --spacing-3xl: 64px;
+    --spacing-4xl: 96px;
+    
+    /* Border radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-full: 9999px;
+    
+    /* Transiciones */
+    --transition-fast: 0.2s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    /* Sombras */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 12px rgba(48, 125, 232, 0.3);
+    --shadow-lg: 0 8px 24px rgba(48, 125, 232, 0.12);
+}

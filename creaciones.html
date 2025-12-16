@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Heraceramic</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cambo&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <script type="module" src="./js/creaciones.js"></script>
+
+</head>
+
+<body>
+    <header class="header container">
+        <div class="header--logo">
+            <span>heraceramic</span>
+        </div>
+        <nav class="header--navbar">
+            <a href="./index.html">Inicio</a>
+            <a href="./sobremi.html">Sobre Mí</a>
+            <a href="./creaciones.html">Creaciones</a>
+        </nav>
+        <nav class="header--btnContact">
+            <a class="btnPrinc" href="./contacto.html">Contacto</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="gallery-section">
+            <div class="gallery-header">
+                <h1>Galería de Creaciones</h1>
+                <p>Piezas únicas hechas a mano con amor y barro. Explora la colección donde las texturas orgánicas se
+                    encuentran con el diseño contemporáneo.</p>
+            </div>
+
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">Todo</button>
+                <button class="filter-btn" data-filter="vasos">Vasos</button>
+                <button class="filter-btn" data-filter="tazas">Tazas</button>
+                <button class="filter-btn" data-filter="jarras">Jarras</button>
+                <button class="filter-btn" data-filter="platos">Platos</button>
+                <button class="filter-btn" data-filter="colecciones">Colecciones</button>
+                <button class="filter-btn" data-filter="complementos">Complementos</button>
+            </div>
+
+            <div class="gallery-grid">
+            </div>
+
+            <div class="gallery-footer">
+                <p class="gallery-count"></p>
+                <div class="pagination-buttons"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+            <div class="logo">heraceramic</div>
+            <nav class="nav-footer">
+                <a href="#">Instagram</a>
+                <a href="#">Pinterest</a>
+                <a href="#">Contacto</a>
+            </nav>
+            <small>&copy; 2025 Heraceramic. Todos los derechos reservados.</small>
+        </div>
+    </footer>
+    <div class="modal-overlay" id="product-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div class="modal-image">
+                <img src="" alt="">
+            </div>
+            <div class="modal-info">
+                <h2 class="modal-name"></h2>
+                <p class="modal-description"></p>
+                <p class="modal-description-long"></p>
+                <ul class="modal-details">
+                    <li><strong>Material:</strong> <span class="modal-material"></span></li>
+                    <li><strong>Dimensiones:</strong> <span class="modal-dimensions"></span></li>
+                    <li><strong>Uso:</strong> <span class="modal-usage"></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
