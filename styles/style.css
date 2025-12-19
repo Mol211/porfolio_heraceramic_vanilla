@@ -12,9 +12,27 @@
 @import url('./components/buttons.css');
 @import url('./components/cards.css');
 @import url('./components/forms.css');
+@import url('./components/modal.css');
 
 /* PAGES */
 @import url('./pages/home.css');
 @import url('./pages/about.css');
 @import url('./pages/gallery.css');
 @import url('./pages/contact.css');
+
+/* Define a transition duration during page visits */
+.transition-fade {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+html.is-changing .transition-fade {
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+html.is-animating .transition-fade {
+  opacity: 0;
+  transform: translateY(10px);
+}

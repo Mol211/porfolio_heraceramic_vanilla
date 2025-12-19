@@ -12,6 +12,8 @@
         href="https://fonts.googleapis.com/css2?family=Cambo&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <script type="module" src="./js/menu.js"></script>
+    <script type="module" src="./js/form.js"></script>
+    <script type="module" src="./js/app.js"></script>
 </head>
 
 
@@ -40,7 +42,7 @@
 <!-- Overlay oscuro para cuando el menú está abierto -->
 <div class="menu-overlay" id="menuOverlay"></div>
 
-    <main class="contact-main">
+    <main id="swup" class="contact-main transition-fade">
         <!-- Left Column: Form -->
         <div class="contact-form-section">
             <div class="contact-form-wrapper">
@@ -54,17 +56,17 @@
                     <div class="form-row">
                         <label class="form-field">
                             <span>Nombre</span>
-                            <input type="text" placeholder="Tu nombre" required>
+                            <input id="input-name" type="text" placeholder="Tu nombre" >
                         </label>
                         <label class="form-field">
                             <span>Correo electrónico</span>
-                            <input type="email" placeholder="tu@email.com" required>
+                            <input id="input-mail" type="email" placeholder="tu@email.com" >
                         </label>
                     </div>
 
                     <label class="form-field">
                         <span>Asunto</span>
-                        <select required>
+                        <select required id="select-asunto">
                             <option value="">Selecciona un asunto</option>
                             <option value="general">Consulta general</option>
                             <option value="comision">Comisión personalizada</option>
@@ -75,7 +77,7 @@
 
                     <label class="form-field">
                         <span>Mensaje</span>
-                        <textarea placeholder="Cuéntame más sobre lo que necesitas..." rows="6" required></textarea>
+                        <textarea id="input-msg" placeholder="Cuéntame más sobre lo que necesitas..." rows="6" ></textarea>
                     </label>
 
                     <button type="submit" class="btnPrinc btn-submit">
@@ -96,6 +98,7 @@
                             <p>Calle de la Cerámica, 12</p>
                             <p>11404, Jerez de la Frontera</p>
                             <a href="#" class="info-link">Ver en mapa</a>
+                            
                         </div>
                     </div>
 
@@ -131,9 +134,9 @@
         <div>
             <div class="logo">heraceramic</div>
             <nav class="nav-footer">
-                <a href="#">Instagram</a>
+                <a href="https://www.instagram.com/hera_ceramic/">Instagram</a>
                 <a href="#">Pinterest</a>
-                <a href="#">Contacto</a>
+                <a href="./contacto.html">Contacto</a>
             </nav>
             <small>&copy; 2025 Heraceramic. Todos los derechos reservados.</small>
         </div>

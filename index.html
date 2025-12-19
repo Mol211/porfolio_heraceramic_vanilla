@@ -11,7 +11,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cambo&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <script type="module" src="./js/carousel.js"></script>
+    <script type="module" src="./js/app.js"></script>
     <script type="module" src="./js/menu.js"></script>
 </head>
 
@@ -40,15 +40,15 @@
 </header>
 <!-- Overlay oscuro para cuando el menú está abierto -->
 <div class="menu-overlay" id="menuOverlay"></div>
-    <main>
+    <main id="swup" class="transition-fade">
         <section class="hero">
             <div class="hero--content">
                 <h1 class="hero--content_titulo">Cerámica artesanal con alma</h1>
                 <p>Piezas únicas creadas a mano, inspiradas en la serenidad de la naturaleza y los tonos cálidos de la
                     tierra. Objetos que invitan a la calma</p>
                 <div class="hero--btns">
-                    <a class="btnPrinc" href="">Ver Galería</a>
-                    <a class="btnSec" href="">Conoce mi historia</a>
+                    <a class="btnPrinc" href="./creaciones.html">Ver Galería</a>
+                    <a class="btnSec" href="./sobremi.html">Conoce mi historia</a>
                 </div>
             </div>
         </section>
@@ -60,7 +60,7 @@
                     pequeño taller.</p>
                 <p>Busco la belleza en la imperfección y la serenidad en los objetos cotidianos, utilizando materiales
                     sostenibles y procesos lentos que respetan los tiempos de la tierra.</p>
-                <a class="noBtn" href="">Leer mi biografía completa</a>
+                <a class="noBtn" href="./sobremi.html">Leer mi biografía completa</a>
             </div>
             <div class="esencia--img">
                 <img src="./res/il_794xN.5497767787_4p2p.avif" alt="colección cerámica">
@@ -88,9 +88,9 @@
         <div>
             <div class="logo">heraceramic</div>
             <nav class="nav-footer">
-                <a href="#">Instagram</a>
+                <a href="https://www.instagram.com/hera_ceramic/">Instagram</a>
                 <a href="#">Pinterest</a>
-                <a href="#">Contacto</a>
+                <a href="./contacto.html">Contacto</a>
             </nav>
             <small>&copy; 2025 Heraceramic. Todos los derechos reservados.</small>
         </div>

@@ -12,35 +12,36 @@
         href="https://fonts.googleapis.com/css2?family=Cambo&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <script type="module" src="./js/menu.js"></script>
+    <script type="module" src="./js/app.js"></script>
 </head>
 
 
 <body>
-<header class="header container">
-    <div class="header--logo">
-        <span>hera_ceramic</span>
-    </div>
-    
-    <!-- Menú de navegación -->
-    <nav class="header--navbar" id="navMenu">
-        <a href="./index.html">Inicio</a>
-        <a href="./sobremi.html">Sobre Mí</a>
-        <a href="./creaciones.html">Creaciones</a>
-        <a id="contact_mobile" href="./contacto.html">Contacto</a>
-    </nav>
-    
-    <!-- Botón contacto desktop -->
-        <a id="contact-desktop" class="btnPrinc" href="./contacto.html">Contacto</a>
-    
-    <!-- Botón hamburguesa móvil -->
-    <button class="mobile-menu-toggle" id="menuToggle" aria-label="Abrir menú">
-        <span class="hamburger"></span>
-    </button>
-</header>
+    <header class="header container">
+        <div class="header--logo">
+            <span>hera_ceramic</span>
+        </div>
 
-<!-- Overlay oscuro para cuando el menú está abierto -->
-<div class="menu-overlay" id="menuOverlay"></div>
-    <main>
+        <!-- Menú de navegación -->
+        <nav class="header--navbar" id="navMenu">
+            <a href="./index.html">Inicio</a>
+            <a href="./sobremi.html">Sobre Mí</a>
+            <a href="./creaciones.html">Creaciones</a>
+            <a id="contact_mobile" href="./contacto.html">Contacto</a>
+        </nav>
+
+        <!-- Botón contacto desktop -->
+        <a id="contact-desktop" class="btnPrinc" href="./contacto.html">Contacto</a>
+
+        <!-- Botón hamburguesa móvil -->
+        <button class="mobile-menu-toggle" id="menuToggle" aria-label="Abrir menú">
+            <span class="hamburger"></span>
+        </button>
+    </header>
+
+    <!-- Overlay oscuro para cuando el menú está abierto -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <main id="swup" class="transition-fade">
         <!-- Bio Section -->
         <section class="bio">
             <div class="bio-image">
@@ -113,9 +114,9 @@
         <div>
             <div class="logo">heraceramic</div>
             <nav class="nav-footer">
-                <a href="#">Instagram</a>
+                <a href="https://www.instagram.com/hera_ceramic/">Instagram</a>
                 <a href="#">Pinterest</a>
-                <a href="#">Contacto</a>
+                <a href="./contacto.html">Contacto</a>
             </nav>
             <small>&copy; 2025 Heraceramic. Todos los derechos reservados.</small>
         </div>

@@ -1,21 +1,23 @@
 import { products } from './products.js';
 import { attachModalListeners } from './modal.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+export function initGallery() {
+const galleryGrid = document.querySelector('.gallery-grid');
+if(!galleryGrid) return;
 
     // --- Variables de galería ---
     const productsPerPage = 6;
     let currentPage = 1;
     let filteredProducts = [...products];
-
-    const galleryGrid = document.querySelector('.gallery-grid');
+ 
     const galleryFooter = document.querySelector('.gallery-footer');
     const galleryCount = galleryFooter.querySelector('.gallery-count');
     const paginationDiv = galleryFooter.querySelector('.pagination-buttons');
     const filterButtons = document.querySelectorAll('.filter-btn');
+   
 
     // --- Render galería ---
-    function renderGallery() {
+     function renderGallery() {
         galleryGrid.innerHTML = '';
 
         if (filteredProducts.length === 0) {
@@ -65,9 +67,20 @@ document.addEventListener('DOMContentLoaded', () => {
         if (totalPages <= 1) return;
 
         // Botón anterior
-        const prevBtn = document.createElement('button');
-        prevBtn.textContent = '<';
+        const prevBtn = document.createElement('a');
+        prevBtn.classList.add('move-page-btn');
+        prevBtn.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" 
+        width="16" height="20" viewBox="0 0 16 24" fill="none" stroke="currentColor" 
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+        class="icon icon-tabler icons-tabler-outline 
+        icon-tabler-chevron-left"><path stroke="none" d="M0 0h24v24H0z" 
+        fill="none"/><path d="M15 6l-6 6l6 6" />
+        </svg>`;
         prevBtn.disabled = currentPage === 1;
+        if(currentPage === 1){
+            prevBtn.classList.add('active');
+        }
         prevBtn.addEventListener('click', () => {
             if (currentPage > 1) {
                 currentPage--;
@@ -78,20 +91,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Botones de páginas
         for (let i = 1; i <= totalPages; i++) {
-            const btn = document.createElement('button');
+            const btn = document.createElement('a');
+
+            btn.classList.add('btn-pagination');
+            
             btn.textContent = i;
-            if (i === currentPage) btn.classList.add('active');
+            if (i === currentPage){
+                btn.classList.add('active');
+            } 
             btn.addEventListener('click', () => {
+                if(currentPage ===i)return;
                 currentPage = i;
                 renderGallery();
             });
+
             paginationDiv.appendChild(btn);
         }
 
         // Botón siguiente
-        const nextBtn = document.createElement('button');
-        nextBtn.textContent = '>';
-        nextBtn.disabled = currentPage === totalPages;
+        const nextBtn = document.createElement('a');
+        nextBtn.classList.add('move-page-btn')
+        nextBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" 
+        width="16" height="20" viewBox="0 0 16 24" fill="none" stroke="currentColor" 
+        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+        class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" />
+        </svg>` ;
+        if(currentPage === totalPages) {
+            nextBtn.classList.add('active');
+        }
         nextBtn.addEventListener('click', () => {
             if (currentPage < totalPages) {
                 currentPage++;
@@ -116,7 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
             renderGallery();
         });
     });
-
     // --- Inicializar galería ---
     renderGallery();
-});
+}

@@ -1,11 +1,29 @@
 import { products } from './products.js';
 import { attachModalListeners } from './modal.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+export function initCarrousel() {
+
+    const productsContainer = document.querySelector('.products');
+    if (!productsContainer) return;
+
+
+    const btnPrev = document.querySelector('.obras--header button[aria-label="Anterior"]');
+    const btnNext = document.querySelector('.obras--header button[aria-label="Siguiente"]');
+
+    btnPrev?.addEventListener('click', () => {
+        const productWidth = productsContainer.querySelector('.product').offsetWidth + 20;
+        productsContainer.scrollBy({ left: -productWidth, behavior: 'smooth' });
+    });
+    btnNext?.addEventListener('click', () => {
+        const productWidth = productsContainer.querySelector('.product').offsetWidth + 20;
+        productsContainer.scrollBy({ left: productWidth, behavior: 'smooth' });
+    });
 
     const featuredProducts = products.filter(p => p.destacado);
-    const productsContainer = document.querySelector('.products');
-    
+    productsContainer.innerHTML = "";
+
+
+
     featuredProducts.forEach((product) => {
         const div = document.createElement('div');
         div.classList.add('product', 'prod');
@@ -19,19 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         productsContainer.appendChild(div);
     });
+
     attachModalListeners();
 
 
-    const btnPrev = document.querySelector('.obras--header button[aria-label="Anterior"]');
-    const btnNext = document.querySelector('.obras--header button[aria-label="Siguiente"]');
 
-    btnPrev.addEventListener('click', () => {
-        const productWidth = productsContainer.querySelector('.product').offsetWidth + 20;
-        productsContainer.scrollBy({ left: -productWidth, behavior: 'smooth' });
-    });
-    btnNext.addEventListener('click', () => {
-        const productWidth = productsContainer.querySelector('.product').offsetWidth + 20;
-        productsContainer.scrollBy({ left: productWidth, behavior: 'smooth' });
-    });
 
-});
+
+
+}

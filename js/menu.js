@@ -2,11 +2,14 @@
 // MENÚ MÓVIL
 // ================================================
 
-document.addEventListener('DOMContentLoaded', function() {
+export function initMenu() {
+
     const menuToggle = document.getElementById('menuToggle');
     const navMenu = document.getElementById('navMenu');
     const menuOverlay = document.getElementById('menuOverlay');
     const navLinks = navMenu.querySelectorAll('a');
+    
+    if(!menuToggle || !navMenu || !menuOverlay) return;
 
     // Función para abrir/cerrar el menú
     function toggleMenu() {
@@ -50,4 +53,6 @@ document.addEventListener('DOMContentLoaded', function() {
             closeMenu();
         }
     });
-});
+
+
+}
