@@ -6,7 +6,7 @@ const galleryGrid = document.querySelector('.gallery-grid');
 if(!galleryGrid) return;
 
     // --- Variables de galería ---
-    const productsPerPage = 6;
+    const productsPerPage = 40;
     let currentPage = 1;
     let filteredProducts = [...products];
  
